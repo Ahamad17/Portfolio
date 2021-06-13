@@ -27,9 +27,26 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/boxicons/css/boxicons.min.css",
+              "node_modules/glightbox/dist/css/glightbox.min.css",
+              "node_modules/aos/dist/aos.css",
+              "node_modules/remixicon/fonts/remixicon.css",
+              "node_modules/swiper/swiper-bundle.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/swiper/swiper-bundle.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/boxicons/dist/boxicons.js",
+              "node_modules/glightbox/dist/js/glightbox.min.js",
+              "node_modules/isotope-layout/dist/isotope.pkgd.min.js",
+              "node_modules/aos/dist/aos.js",
+              "node_modules/@srexi/purecounterjs/purecounter.js",
+              "node_modules/waypoints/lib/noframework.waypoints.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -98,6 +115,10 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
