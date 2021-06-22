@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+// import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import * as AOS from 'aos';
 import Typed, { TypedOptions } from 'typed.js';
-import Swiper from 'swiper';
+// import Swiper from 'swiper';
 import { AfterViewInit } from '@angular/core';
-declare const Waypoint: any;
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as bootstrap from 'bootstrap';
-// const PureCounter = require('@srexi/purecounterjs');
 
 @Component({
   selector: 'app-portfolio',
@@ -16,31 +14,31 @@ import * as bootstrap from 'bootstrap';
 })
 export class PortfolioComponent implements OnInit, AfterViewInit {
 
-  config: SwiperConfigInterface = {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
+  // config: SwiperConfigInterface = {
+  //   speed: 600,
+  //   loop: true,
+  //   autoplay: {
+  //     delay: 5000,
+  //     disableOnInteraction: false
+  //   },
+  //   slidesPerView: 'auto',
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     type: 'bullets',
+  //     clickable: true
+  //   },
+  //   breakpoints: {
+  //     320: {
+  //       slidesPerView: 1,
+  //       spaceBetween: 20
+  //     },
 
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
-  };
+  //     1200: {
+  //       slidesPerView: 3,
+  //       spaceBetween: 20
+  //     }
+  //   }
+  // };
 
   options: TypedOptions = {
     strings: ['Web Developer', 'Mentor', 'Trainer'],
@@ -73,23 +71,8 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
       once: true,
       mirror: false
     });
-    // const pure = new PureCounter;
     const typed = new Typed('.typed', this.options);
-    const swiper = new Swiper('.testimonials-slider', this.config);
-
-    // const skilsContent = this.select('.skills-content');
-    // if (skilsContent) {
-    //   const way = new Waypoint({
-    //     element: skilsContent,
-    //     offset: '80%',
-    //     handler: (direction: any) => {
-    //       const progress = this.select('.progress .progress-bar', true);
-    //       progress.forEach((el: any) => {
-    //         el.style.width = el.getAttribute('aria-valuenow') + '%'
-    //       });
-    //     }
-    //   });
-    // }
+    // const swiper = new Swiper('.testimonials-slider', this.config);
   }
 
   ngAfterViewInit(): void {
@@ -103,17 +86,17 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
     this.toastr = new bootstrap.Toast(<any>document.querySelector('.toast'), { autohide: false });
 
-    let backtotop = this.select('.back-to-top')
+    let backtotop = this.select('.back-to-top');
     if (backtotop) {
       const toggleBacktotop = () => {
         if (window.scrollY > 100) {
-          backtotop.classList.add('active')
+          backtotop.classList.add('active');
         } else {
-          backtotop.classList.remove('active')
+          backtotop.classList.remove('active');
         }
       }
-      window.addEventListener('load', toggleBacktotop)
-      this.onscroll(document, toggleBacktotop)
+      window.addEventListener('load', toggleBacktotop);
+      this.onscroll(document, toggleBacktotop);
     }
 
     let navbarlinks = this.select('#navbar .scrollto', true)
@@ -124,18 +107,18 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
         let section = this.select(navbarlink.hash)
         if (!section) return
         if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-          navbarlink.classList.add('active')
+          navbarlink.classList.add('active');
         } else {
-          navbarlink.classList.remove('active')
+          navbarlink.classList.remove('active');
         }
       })
     }
-    window.addEventListener('load', navbarlinksActive)
-    this.onscroll(document, navbarlinksActive)
+    window.addEventListener('load', navbarlinksActive);
+    this.onscroll(document, navbarlinksActive);
   }
 
   onscroll(el: any, listener: any) {
-    el.addEventListener('scroll', listener)
+    el.addEventListener('scroll', listener);
   }
 
   toggleNav() {

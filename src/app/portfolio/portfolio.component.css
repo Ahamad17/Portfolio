@@ -322,7 +322,7 @@ section {
 /*--------------------------------------------------------------
 # Facts
 --------------------------------------------------------------*/
-.facts {
+/* .facts {
   padding-bottom: 30px;
 }
 
@@ -368,7 +368,7 @@ section {
 
 .facts .count-box a:hover {
   color: #1f5297;
-}
+} */
 
 /*--------------------------------------------------------------
 # Akills
@@ -471,7 +471,7 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-.portfolio .portfolio-item {
+/* .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
 
@@ -566,12 +566,12 @@ section {
 .portfolio .portfolio-wrap:hover .portfolio-links {
   opacity: 1;
   bottom: 0;
-}
+} */
 
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
-.portfolio-details {
+/* .portfolio-details {
   padding-top: 40px;
 }
 
@@ -631,12 +631,12 @@ section {
 
 .portfolio-details .portfolio-description p {
   padding: 0;
-}
+} */
 
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
+/* .services .icon-box {
   margin-bottom: 20px;
 }
 
@@ -686,12 +686,12 @@ section {
   margin-left: 80px;
   line-height: 24px;
   font-size: 14px;
-}
+} */
 
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
-.testimonials .testimonial-item {
+/* .testimonials .testimonial-item {
   box-sizing: content-box;
   text-align: center;
   min-height: 320px;
@@ -772,7 +772,7 @@ section {
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #149ddd;
-}
+} */
 
 /*--------------------------------------------------------------
 # Contact
