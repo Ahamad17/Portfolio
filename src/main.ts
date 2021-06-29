@@ -8,5 +8,9 @@ if (environment.production) {
   enableProdMode();
 }
 
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));

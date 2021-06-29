@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-import * as AOS from 'aos';
+// import * as AOS from 'aos';
 import Typed, { TypedOptions } from 'typed.js';
 // import Swiper from 'swiper';
 import { AfterViewInit } from '@angular/core';
@@ -65,12 +65,12 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
+    // AOS.init({
+    //   duration: 1000,
+    //   easing: 'ease-in-out',
+    //   once: true,
+    //   mirror: false
+    // });
     const typed = new Typed('.typed', this.options);
     // const swiper = new Swiper('.testimonials-slider', this.config);
   }

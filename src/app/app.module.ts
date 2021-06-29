@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
+import { AnimateModule } from 'src/app/lib/animate.module';
+import { AnimateConfig } from 'src/app/lib/animate.config';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,8 +23,10 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     SwiperModule,
     FormsModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AnimateModule.init(<AnimateConfig>{triggerMode: 'scrolling'})
   ],
   providers: [],
   bootstrap: [AppComponent]
