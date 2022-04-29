@@ -6,6 +6,7 @@ import Typed, { TypedOptions } from 'typed.js';
 import { AfterViewInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as bootstrap from 'bootstrap';
+import { Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
@@ -40,6 +41,14 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   //   }
   // };
 
+  private subscription: Subscription;
+  seconds = 0;
+  hours = 0;
+  minutes = 0;
+  age = 0;
+  experience = 0;
+  months = 0;
+
   options: TypedOptions = {
     strings: ['Web Developer', 'Mentor', 'Trainer'],
     loop: true,
@@ -65,6 +74,12 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
+    this.hours = this.getTime('hours');
+    this.minutes = this.getTime('minutes');
+    this.seconds = this.getTime('seconds');
+    this.age = this.getTime('age');
+    this.experience = this.getTime('experience');
+    this.months = this.getTime('months');
     // AOS.init({
     //   duration: 1000,
     //   easing: 'ease-in-out',
@@ -73,6 +88,17 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     // });
     const typed = new Typed('.typed', this.options);
     // const swiper = new Swiper('.testimonials-slider', this.config);
+    this.subscription = interval(1000)
+      .subscribe(x => {
+        this.seconds = this.getTime('seconds');
+        if (this.seconds === 0) {
+          this.hours = this.getTime('hours');
+          this.minutes = this.getTime('minutes');
+          this.experience = this.getTime('experience');
+          this.age = this.getTime('age');
+          this.months = this.getTime('months');
+        }
+      });
   }
 
   ngAfterViewInit(): void {
@@ -164,4 +190,24 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     this.message = '';
     this.toastr.hide();
   }
+
+  getTime(type: string) {
+    switch (type) {
+      case 'seconds':
+        return new Date().getSeconds();
+      case 'minutes':
+        return new Date().getMinutes();
+      case 'hours':
+        return new Date().getHours();
+      case 'months':
+        return new Date().getMonth();
+      case 'age':
+        return Math.floor((new Date().valueOf() - new Date('1997-02-24').getTime()) / 3.15576e+10)
+      case 'experience':
+        return Math.floor((new Date().valueOf() - new Date('2018-07-02').getTime()) / 3.15576e+10)
+      default:
+        return new Date().getSeconds();
+    }
+  }
+
 }
